@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <link rel="icon" href="./images/logo2.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link href="./css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0">Rock Paper scissor</span>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <button id="openBtnRule" class="info-button ">Rule</button>
+            <button id="openBtn" class="info-button">Info</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="popup" id="popup-rule">
+      <div class="popup-content">
+        <span class="close" id="closeBtnRule">&times;</span>
+        <div class="rules">
+          <h5><b>Rules of the Game</b></h5>
+          <p>Mention rounds before play</p>
+          <ul>
+            <li>Rock wins against scissors</li>
+            <li>Paper wins against rock</li>
+            <li>scissors wins against paper</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close bg-light" id="closeBtn">&times;</span>
+        <div class="shadow-lg info">
+          <h5><b>Information</b></h5>
+          <p>
+            The game is played with three possible hand signals that represent a
+            rock, paper, and scissors.
+          </p>
+          <ul>
+            <li>Rock is a closed fist</li>
+            <li>
+              Paper is a flat hand with fingers and thumb extended and the palm
+              facing downward
+            </li>
+            <li>
+              Scissors is a fist with the index and middle fingers fully
+              extended toward the opposing player
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <section class="main">
+      <!-- Total Rounds Section -->
+      <div class="d-flex  justify-content-center round">
+        <!-- <label for="round" class="form-label game-font text-dark">Select Number of Rounds:</label> -->
+        <div class=" input-group shadow">
+          <input class="form-control select-round" placeholder="Enter Number of Rounds" type="number" id="round" name="round" aria-describedby="round-addon" />
+          <div class="input-group-append">
+            <span class="input-group-text" id="round-addon">Rounds</span>
+          </div>
+        </div>
+      </div>
+
+      <section class=" d-flex justify-content-center">
+        <div class="m-3">
+          <h5>You</h5>
+          <p><span class="users" id="user-score">0</span></p>
+          <img class="bg-transparent shadow-lg" id="user-choice-img" height="50px" src="images/rock.png"/>
+          <p><span class="users" id="user-choice"></span></p>
+        </div>
+        <div class="m-3">
+          <h5>Computer</h5>
+          <p><span class="computers" id="computer-score">0</span></p>
+          <img class="bg-transparent shadow-lg" id="computer-choice-img" height="50px" src="images/rock.png"/>
+          <p><span class="computers" id="computer-choice"></span>
+          </p>
+        </div>
+      </section>
+    
+      <!-- Score Board Section -->
+      <!-- <section class=" shadow-lg container border border-dark mt-4"> -->
+        <!-- <h5>Score Board</h5> -->
+        <!-- <div class="row"> -->
+          <!-- Computer Section -->
+          <!-- <div class="col border-top border-end border-dark"> -->
+            <!-- <h6>
+              Computer Choice : <span class="computers" id="computer-choice"></span>
+            </h6> -->
+            <!-- <h6>
+              Computer Score: <span class="computers" id="computer-score">0</span>
+            </h6> -->
+          <!-- </div> -->
+    
+          <!-- User Section -->
+          <!-- <div class="col border-top border-dark">
+            <h6>User Choice : <span class="users" id="user-choice"></span></h6>
+            <h6>User Score : <span class="users" id="user-score">0</span></h6>
+          </div>
+        </div>
+      </section> -->
+      <section class="result-section">
+        <div class="res">
+          <h5 class="resd"><span class="result" id="result"></span></h5>
+          <h5 class=" resf">
+          <span class="totalr" id="total"></span>
+          </h5>
+        </div>
+      </section>
+    </section>
+   
+    
+      <section class="anim">
+        <div class="option" id="rock1" onclick="playSound(600,200)">
+          <img class="image" src="images/rock.png" height="70px" width="70px" />
+        </div>
+        <div class="option" id="paper1" onclick="playSound(500,200)">
+          <img class="image" src="images/papers.png" height="70px" width="70px" />
+        </div>
+        <div class="option" id="scissor1" onclick="playSound(440,200)">
+          <img
+            class="image"
+            src="images/scissor.png"
+            height="70px"
+            width="70px"
+          />
+        </div>
+      </section>
+    </section>
+
+    <div class="reset">
+      <button class="try-button" onclick="reset()"><b>Restart</b></button>
+      <!-- <button class="info-button" onclick="info()"><b>Info</b></button> -->
+    </div>
+
+    <footer class="footer">
+      <p class="h6 mt-2 text-center"><b>&copy; 2023. Designed by Jatin.</b></p>
+    </footer>
+
+    <script src="./js/app.js" charset="utf-8"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
