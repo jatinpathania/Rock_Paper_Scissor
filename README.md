@@ -45,7 +45,7 @@ Rock Paper Scissors is a simple yet engaging hand game where you compete against
 1. **Download the project:**
    - Clone the repository or download it as a ZIP file
    ```bash
-   git clone https://github.com/yourusername/rock-paper-scissors.git
+   git clone https://github.com/jatinpathania/Rock_Paper_Scissor
    ```
 
 2. **Open the game:**
@@ -88,10 +88,6 @@ Contributions are welcome! If you'd like to improve this project:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is open source and available under the MIT License.
 
 ---
 
